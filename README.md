@@ -1,1 +1,1 @@
-# NTUA-Appathon
+# NTUA-Appathon CTGOV-03. https://www.semanticscholar.org/cord19 Ταξινόμηση χωρών που έχουν πραγματοποιήσει κλινικές μελέτες για μια συγκεκριμένη ασθένεια που θα δίνεται ως input από τον χρήστη. Κλινικές δοκιμές από https://clinicaltrials.gov/
