@@ -8,7 +8,7 @@ const appDir = config.app.appDir;
 //Global variable 
 global.appDir = appDir;
 
-app.set('port', config.app.port); // port, 443 probably
+app.set('port', config.app.port); // port, 80 probably
 app.set('views', config.app.views);
 app.set('view engine', config.app.viewEngine);
 
@@ -21,15 +21,10 @@ app.use(express.static(path.join(appDir, 'public'))); // configure express to us
 let router = require('./routing/routing.js');
 app.use('/', router);
 
-//module.exports = app;
-// https.createServer(config.httpsOptions
-//     ,app).listen(443);
+
 
  const http = require('http');
-// http.createServer((req, res)=>{
-//     res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url});
-//     res.end();
-// }).listen(80);
+
 
 
 http.createServer(app).listen(config.app.port);
