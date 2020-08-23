@@ -9,5 +9,5 @@
 - API (https://clinicaltrials.gov/ct2/resources/download?fbclid=IwAR0h0BNu40Q1pMB287FmU81Hpis7o-zgZo97jTKIv5y8JQmtTMa01se41-A#UseURL)
 
 Εκτέλεση μέσω cmd:
--- node server.js
+- node server.js
 
