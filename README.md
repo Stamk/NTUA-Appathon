@@ -12,4 +12,6 @@
 
 
 Εκτέλεση μέσω cmd:
+
+- npm install express (τοπικά)
 - node server.js
