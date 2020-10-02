@@ -1,0 +1,9 @@
+#Local server port
+server:
+  port: 8081
+
+#Logging Parameters
+logging:
+  level:
+    gr.ntua:
+      DEBUG

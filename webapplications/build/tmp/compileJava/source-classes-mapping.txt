@@ -1,0 +1,12 @@
+gr/ntua/stamoulis/webapplications/model/ClinicalTrialsResponse.java
+ gr.ntua.stamoulis.webapplications.model.ClinicalTrialsResponse
+gr/ntua/stamoulis/webapplications/model/ClinicalTrialsRequest.java
+ gr.ntua.stamoulis.webapplications.model.ClinicalTrialsRequest
+gr/ntua/stamoulis/webapplications/model/CountryInfo.java
+ gr.ntua.stamoulis.webapplications.model.CountryInfo
+gr/ntua/stamoulis/webapplications/WebapplicationsApplication.java
+ gr.ntua.stamoulis.webapplications.WebapplicationsApplication
+gr/ntua/stamoulis/webapplications/service/ClinicalTrialsService.java
+ gr.ntua.stamoulis.webapplications.service.ClinicalTrialsService
+gr/ntua/stamoulis/webapplications/controller/ClinicalTrialsController.java
+ gr.ntua.stamoulis.webapplications.controller.ClinicalTrialsController
