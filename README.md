@@ -14,7 +14,7 @@ APIs:
 - Google Maps
 
 
-Εκτέλεση μέσω cmd:
+Εκτέλεση τοπικά μέσω cmd:
 
-- npm install express (τοπικά)
+- npm install express 
 - node server.js
