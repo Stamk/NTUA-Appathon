@@ -1,15 +1,25 @@
+<!DOCTYPE html>
+
 <html>
-
 <head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <!-- jsFiddle will insert css and js -->
+    <h3 style="text-align:center;font-size:90px">NTUA Appaton</h3>
+    <img class="logo" src="https://www.ece.ntua.gr/themes/ecetheme/assets/img/pyrforos.svg" alt="My_Logo" width="200" height="200" style="vertical-align:middle;margin:100px 520px" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+	<h2 style="text-align: center" style="vertical-align:middle;margin:50px 0px">Clinical Trials Gov-3 </h2>
 </head>
 
-<body>
-    <div class="container m-5">
+<body style="vertical-align:middle;margin:50px 780px">
+    <div class="container m-5"  >
     <form action="/search" method="get">
-        <div class="form-group">
-        <input class="form-control m-5" type="text" id="astheneia" name="astheneia" placeholder="Ασθένεια">
+        <div class="form-group" style="text-align:center;"  >
+        <input class="form-control m-5" type="text" id="astheneia" name="astheneia" placeholder="Ασθένεια" >
         <button class="btn btn-primary m-5" type="submit">Αναζήτηση</button>
     </div>
     </form>
@@ -24,5 +34,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initMap" async defer></script>
 
 </html>

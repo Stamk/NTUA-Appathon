@@ -5,6 +5,7 @@ const config = require('./config.js');
 const app = express();
 const appDir = config.app.appDir;
 
+
 //Global variable 
 global.appDir = appDir;
 
@@ -17,14 +18,9 @@ app.use(express.json());       // to support JSON-encoded bodies.
 app.use(express.urlencoded({extended: true})); // to support URL-encoded bodies
 app.use(express.static(path.join(appDir, 'public'))); // configure express to use public folder
 
+
 // routing
 let router = require('./routing/routing.js');
 app.use('/', router);
-
-
-
  const http = require('http');
-
-
-
 http.createServer(app).listen(config.app.port);

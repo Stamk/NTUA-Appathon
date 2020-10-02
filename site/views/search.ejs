@@ -1,27 +1,75 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <table class="card-header">
+	<h2 style="text-align:center;font-size:40px;margin:40px">Τελικά Αποτελέσματα</h2>
+	</table>
     </head>
     <body>
-        <table class="table">
+	<script>
+	var countriesNames = [];
+	</script>
+			  
+        <table class="table" style="margin:5px 40px;text-align:center">
             <thead>
               <tr>                
-                <th scope="col">Χώρα</th>
-                <th scope="col">Αριθμών κλινικών</th>
+                <th scope="col" style="text-align:center">Χώρα</th>
+                <th scope="col" style="text-align:center">Αριθμός κλινικών μελετών</th>
               </tr>
             </thead>
             <tbody>
                 <% for (let i=0; i<results.length; i++){ %>
               <tr>
-                <td><%= results[i][0] %></td>
-                <td><%= results[i][1] %></td>
+                <td><%= results[i].country %></td>
+                <td><%= results[i].count %></td>
+				<script>
+					countriesNames.push("<%= results[i].country %>");
+				</script>
               </tr>
               <% } %>
             </tbody>
           </table>
+		 <h4 style="text-align:center;font-size:40px;margin:60px">Απεικόνιση χωρών στον χάρτη</h4>
+		 <div id="map" style="height: 85%; width: 70%;margin:40px 400px" ></div>
+
     </body>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="htps://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+// Initialize and add the map
+function initMap() {	
+  // The location of Uluru
+  var uluru = {lat: 0, lng: 0};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 3, center: uluru});
+for (i=0; i<countriesNames.length; i++){
+		$.get('https://api.opencagedata.com/geocode/v1/json?q='+countriesNames[i]+'&key=9ac61517f9c84e0ab0de0e0a778f20b7', (data)=>{
+			
+			var newpos = {lat: data.results[0].geometry.lat , lng:data.results[0].geometry.lng };
+			var marker = new google.maps.Marker({position: newpos, map: map});
+		})
+	};
+}
+
+
+
+</script>
+ <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGiRkkZafofbefWHiQYc2PfiY05rMM_NM&callback=initMap">
+    </script>
+<script>
+function markers(){
+for (i=0; i<countriesNames.length; i++){
+		$.get('https://api.opencagedata.com/geocode/v1/json?q='+countriesNames[i]+'&key=9ac61517f9c84e0ab0de0e0a778f20b7', (data)=>{
+			
+			var newpos = {lat: data.results[0].geometry.lat , lng:data.results[0].geometry.lng };
+			var marker = new google.maps.Marker({position: newpos, map: map});
+		})
+	}}
+
+</script>
 </html>
