@@ -9,7 +9,7 @@
 - Bootstrap Framework
 - Express Framework
 - JavaScript
-- JAVA
+- Java
 - HTML
 
 
