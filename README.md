@@ -19,8 +19,10 @@ APIs:
 - Google Maps
 
 Downloads & Installs: 
-- Node.js download link: https://nodejs.org/en/download/?fbclid=IwAR2zhe2V_IbpFkJTL3cW7G6Asyo0vOS8unUlQR1cdyRF4awpyCZcwSW9rbU
+- Node.js
+- IntelliJ
 - npm install express
 
-Εκτέλεση cmd:
-- node server.js
+Εκτέλεση:
+- node server.js (cmd)
+- bootRun (intelliJ)
